@@ -1,2 +1,10 @@
 # market-graph-communities
-Market Segmentation using Attributed Graph Community Detection
+## Market Segmentation using Attributed Graph Community Detection
+
+* In this project, we aim to find such market segments given social network data. These social relations can be captured in a graph framework where nodes represent customers/users and edges represent some social relationship. The properties belonging to each customer/user can be treated as node attributes. Hence, market segmentation becomes the problem of community detection over attributed graphs, where the communities are formed based on graph structure as well as attribute similarities.
+ 
+* One way to evaluate the quality of the market segments (communities) is to influence an entity in each segment and measure how fast the influence propagates over the entire network. The faster that influence propagates through the entire network, the more likely an advertising campaign, for example, will be successful. This is known as Influence Propagation. One of the key ideas in this area is the identification of influential users, by targeting whom certain desirable marketing outcomes can be achieved.
+
+* The projects used a Facebook network dataset of a US university. We find the modularity (networks strength) in terms of link strength and attribute similarity and combine the two. The algorithm starts with each node belonging to a separated community. A node is then chosen randomly. The algorithm tries to move this node from its current community. If a positive gain is found, the node is then placed to the community with the maximum gain. Otherwise, it stays in its original community. This step is applied repeatedly until no more improvement is achieved.
+
+* Implement the SAC-1 method described in the section-IV part-A in the publication. The *eveluation.R* script will measure and compare the time steps taken by the influence propagation algorithm to achieve maximum propagation and compare this with kmeans clustering. To run this code, simply call the evaluation script, *$ Rscript evaluation.R*. This script will assumes you have a file named communities.txt.
